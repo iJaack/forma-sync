@@ -1,0 +1,14 @@
+// Choose your signing team in the gitignored Local.xcconfig for device builds.
+DEVELOPMENT_TEAM =
+// Neutral bundle identifier; use your existing identifier when updating an install.
+FORMA_BUNDLE_ID = com.example.formasync
+// Let Xcode manage signing for your local team.
+CODE_SIGN_STYLE = Automatic
+// Optional HTTPS endpoint for migrating old credentials saved without a URL.
+FORMA_LEGACY_INGEST_URL =
+// Optional comma-separated sleep-source prefixes in addition to Apple and WHOOP.
+FORMA_EXTRA_SLEEP_SOURCES =
+// Keep this service stable to retain the configuration saved in the Keychain.
+FORMA_KEYCHAIN_SERVICE = $(FORMA_BUNDLE_ID).ingest
+// Personal settings override these shared defaults without entering Git.
+#include? "Local.xcconfig"

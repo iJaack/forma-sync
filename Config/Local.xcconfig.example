@@ -1,0 +1,19 @@
+// Copy this file to Local.xcconfig in the same folder (it is ignored by Git).
+// Xcode > Settings > Accounts: add your Apple ID and find your Team ID.
+// Signing team for device builds: replace the placeholder with your Team ID.
+DEVELOPMENT_TEAM = ABCDE12345
+// Choose a unique identifier; preserve the existing one when updating an install.
+FORMA_BUNDLE_ID = com.tuonome.formasync
+// Keep automatic signing enabled.
+CODE_SIGN_STYLE = Automatic
+// Optional migration endpoint for old credentials without a saved URL (empty disables it).
+// In xcconfig, // starts a comment: write https:/$()/ instead of https://.
+// Example: FORMA_LEGACY_INGEST_URL = https:/$()/example.com/api/ingest/health
+FORMA_LEGACY_INGEST_URL =
+// Optional comma-separated bundle prefixes; whitespace and empty entries are ignored.
+// Apple (com.apple.) and WHOOP (com.whoop.) are always allowed.
+// Example: FORMA_EXTRA_SLEEP_SOURCES = com.example.sleep, org.example.tracker
+FORMA_EXTRA_SLEEP_SOURCES =
+// Preserve your previous service when updating an install so saved configs remain accessible.
+// The default follows your bundle ID; override explicitly only if the old service differs.
+FORMA_KEYCHAIN_SERVICE = $(FORMA_BUNDLE_ID).ingest
